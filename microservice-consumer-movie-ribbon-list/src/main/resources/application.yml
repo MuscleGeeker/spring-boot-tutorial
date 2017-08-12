@@ -1,0 +1,10 @@
+server:
+  port: 8900
+eureka:
+  instance:
+    appname: microservice-consumer-movie-ribbon-list
+    instance-id: ${eureka.instance.appname}:${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://user:password@localhost:8761/eureka/

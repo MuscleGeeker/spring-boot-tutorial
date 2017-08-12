@@ -16,7 +16,8 @@ import org.springframework.web.client.RestTemplate;
 @RibbonClient(value = "microservice-provider-user", configuration = RibbonConfig.class)
 @ComponentScan(
         excludeFilters = {
-                @ComponentScan.Filter(type = FilterType.ANNOTATION, value = ExcludeFromComponentScan.class)
+                @ComponentScan.Filter(type = FilterType.ANNOTATION,
+                        value = ExcludeFromComponentScan.class)
         })
 public class MovieRibbonApplication {
 

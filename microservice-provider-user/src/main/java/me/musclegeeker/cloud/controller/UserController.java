@@ -1,5 +1,6 @@
 package me.musclegeeker.cloud.controller;
 
+import com.google.common.collect.Lists;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import me.musclegeeker.cloud.domain.User;
@@ -9,8 +10,11 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 public class UserController {
 
     @Resource
@@ -22,12 +26,12 @@ public class UserController {
     @Resource
     private DiscoveryClient discoveryClient;
 
-    @GetMapping("/api/user/{id}")
+    @GetMapping("/user/{id}")
     public User findUserById(@PathVariable Long id) {
         return userRepository.findOne(id);
     }
 
-    @PostMapping("/api/user")
+    @PostMapping("/user")
     public User postUser(@RequestBody User user) {
         return user;
     }
@@ -41,5 +45,16 @@ public class UserController {
     @GetMapping("/instance-info")
     public ServiceInstance instanceInfo() {
         return this.discoveryClient.getLocalServiceInstance();
+    }
+
+    @GetMapping("/user/list")
+    public List<User> getUserList() {
+        ArrayList<User> list = Lists.newArrayList();
+
+        list.add(userRepository.findOne(1L));
+        list.add(userRepository.findOne(2L));
+        list.add(userRepository.findOne(3L));
+
+        return list;
     }
 }
