@@ -28,3 +28,7 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port}
+    metadata-map:
+      me: MuscleGeeker
+      email: musclegeeker@163.com
+    appname: MICROSERVICE-PROVIDER-HAHA
