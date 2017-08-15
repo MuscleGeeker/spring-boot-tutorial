@@ -22,6 +22,8 @@
         <module>microservice-consumer-movie-ribbon-hystrix</module>
         <module>microservice-consumer-movie-ribbon-hystrix-propagation</module>
         <module>microservice-consumer-movie-feign-customizing-without-hystrix</module>
+        <module>microservice-consumer-movie-feign-with-hystrix-fallbackfactory</module>
+        <module>microservice-hystrix-dashboard</module>
     </modules>
     <packaging>pom</packaging>
 
