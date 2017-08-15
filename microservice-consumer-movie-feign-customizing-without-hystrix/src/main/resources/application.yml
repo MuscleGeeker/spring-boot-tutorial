@@ -1,0 +1,22 @@
+server:
+  port: 8900
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    appname: microservice-consumer-movie-feign-customizing-without-hystrix
+    instance-id: ${eureka.instance.appname}:${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
+logging:
+  level:
+    me.musclegeeker.cloud.feign.UserFeignClient: DEBUG
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
