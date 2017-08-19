@@ -1,5 +1,6 @@
 server:
   port: 8900
+  #context-path: /ribbon
 eureka:
   client:
     service-url:
@@ -10,3 +11,4 @@ eureka:
     appname: microservice-consumer-movie-ribbon-hystrix
     instance-id: ${eureka.instance.appname}:${spring.cloud.client.ipAddress}:${server.port}
     prefer-ip-address: true
+    #home-page-url-path: /ribbon

@@ -1,0 +1,14 @@
+server:
+  port: 8700
+  context-path: /ribbon
+eureka:
+  instance:
+    appname: microservice-consumer-movie-ribbon-hystrix-path
+    instance-id: ${eureka.instance.appname}:${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
+    home-page-url-path: /ribbon
+  client:
+    service-url:
+      defaultZone: http://user:password@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
