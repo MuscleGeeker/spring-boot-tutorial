@@ -1,15 +1,16 @@
 server:
-  port: 8032
+  port: 8033
 eureka:
   instance:
     appname: microservice-hystrix-turbine-path
     prefer-ip-address: true
+    instance-id: ${eureka.instance.appname}:${spring.cloud.client.ipAddress}:${server.port}
   client:
     service-url:
       defaultZone: http://user:password@localhost:8761/eureka/
 turbine:
   aggregator:
-    clusterConfig: default
+    clusterConfig: MICROSERVICE-CONSUMER-MOVIE-RIBBON-HYSTRIX-PATH
   appConfig: microservice-consumer-movie-ribbon-hystrix-path
-  clusterNameExpression: "'default'"
-
+  instanceUrlSuffix:
+    MICROSERVICE-CONSUMER-MOVIE-RIBBON-HYSTRIX-PATH: /ribbon/hystrix.stream
