@@ -28,6 +28,7 @@
         <module>microservice-consumer-movie-ribbon-hystrix-path</module>
         <module>microservice-hystrix-turbine-path</module>
         <module>microservice-gateway-zuul</module>
+        <module>microservice-gateway-zuul-reg-exp</module>
     </modules>
     <packaging>pom</packaging>
 
