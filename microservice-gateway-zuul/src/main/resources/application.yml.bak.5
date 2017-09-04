@@ -8,13 +8,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://user:password@localhost:8761/eureka/
-#hystrix:
-#  command:
-#    default:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMillseconds: 60000
-#ribbon:
-#  ConnectTimeout: 3000
-#  ReadTimeout: 60000
+zuul:
+  prefix: /api

@@ -8,13 +8,14 @@ eureka:
   client:
     service-url:
       defaultZone: http://user:password@localhost:8761/eureka/
-#hystrix:
-#  command:
-#    default:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMillseconds: 60000
-#ribbon:
-#  ConnectTimeout: 3000
-#  ReadTimeout: 60000
+zuul:
+  routes:
+    user-service:
+      path: /user-service/**
+      service-id: microservice-provider-user
+ribbon:
+  eureka:
+    enabled: false
+microservice-provider-user:
+  ribbon:
+    listOfServers: http://localhost:7900,http://localhost:7901
