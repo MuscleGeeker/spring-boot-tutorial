@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: musclegeeker
+  cloud:
+    config:
+      uri: http://user:password@localhost:8080
+      profile: default
+      label: master
