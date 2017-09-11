@@ -1,11 +1,13 @@
 spring:
+  application:
+    name: foobar
   cloud:
     config:
-      uri: http://localhost:8081
+      discovery:
+        enabled: true
+        service-id: microservice-config-server-eureka
 eureka:
   instance:
-    appname: microservice-config-client-eureka
-    instance-id: ${eureka.instance.appname}:${spring.cloud.client.ipAddress}:8081
     prefer-ip-address: true
   client:
     service-url:
