@@ -38,6 +38,7 @@
         <module>microservice-config-client-authentication</module>
         <module>microservice-config-server-eureka</module>
         <module>microservice-config-client-eureka</module>
+        <module>microservice-config-client-refresh-bus</module>
     </modules>
     <packaging>pom</packaging>
 
